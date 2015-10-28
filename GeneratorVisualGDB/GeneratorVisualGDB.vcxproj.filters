@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{0223e7bb-33be-416f-9422-ffe9c83bf225}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{4b2e568d-3081-49de-8b8f-eff52a287e56}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{09ea7d85-c82d-496d-a7af-38014e39ec65}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Make files">
+      <UniqueIdentifier>{2a7eb2cf-96c9-4787-bf9f-9def8dc140d9}</UniqueIdentifier>
+      <Extensions>*.mak</Extensions>
+    </Filter>
+    <Filter Include="Source files\Device-specific files">
+      <UniqueIdentifier>{29a22d7a-9b95-4504-93d9-ab2293802f54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files">
+      <UniqueIdentifier>{bad4db02-0e79-45b4-8bd1-a2af941d6b46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\FreeRTOS">
+      <UniqueIdentifier>{9e3654bf-58ac-4f68-bcc1-4eac8ae2a954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files\FreeRTOS">
+      <UniqueIdentifier>{fd240516-5474-4404-9c39-3ecabfd2782a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\HAL">
+      <UniqueIdentifier>{7d9a202a-12d2-44db-9765-588943aa966e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files\HAL">
+      <UniqueIdentifier>{c954d744-df54-4870-9e5f-0bd73013de9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files\TouchLib">
+      <UniqueIdentifier>{a1e7fd23-d261-47f1-81e6-cf99dd09ea43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Device-specific files\TouchLib">
+      <UniqueIdentifier>{599baeb0-f06f-4d19-bf57-0358087961b6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GeneratorVisualGDB.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="system_stm32l1xx.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\StartupFiles\startup_stm32l152xc.c">
+      <Filter>Source files\Device-specific files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\croutine.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\event_groups.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\list.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\queue.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\tasks.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\timers.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\portable\GCC\ARM_CM3\port.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\portable\MemMang\heap_4.c">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_adc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_adc_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_comp.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_cortex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_crc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_cryp.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_cryp_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_dac.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_dac_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_dma.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_flash.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_flash_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_flash_ramfunc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_gpio.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_i2c.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_i2s.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_irda.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_iwdg.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_lcd.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_nor.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_opamp.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_opamp_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_pcd.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_pcd_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_pwr.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_pwr_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_rcc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_rcc_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_rtc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_rtc_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_sd.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_smartcard.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_spi.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_spi_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_sram.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_tim.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_tim_ex.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_uart.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_usart.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_hal_wwdg.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_ll_fsmc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_ll_sdmmc.c">
+      <Filter>Source files\Device-specific files\HAL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8l_hw.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8l_sw.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8tl5x.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32f0xx.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32f3xx.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_hw.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_sw.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_dxs.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_ecs.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_filter.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_globals.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_linrot.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_object.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm8l.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm8tl5x.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32f0xx.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32f3xx.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32l1xx.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_touchkey.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FreeRTOSConfig.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="stm32l1xx_hal_conf.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\croutine.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\deprecated_definitions.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\event_groups.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\FreeRTOS.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\list.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\mpu_wrappers.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\portable.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\projdefs.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\queue.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\semphr.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\StackMacros.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\task.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\include\timers.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\portable\GCC\ARM_CM3\portmacro.h">
+      <Filter>Header files\Device-specific files\FreeRTOS</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_adc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_adc_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_comp.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_comp_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_cortex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_crc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_cryp.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_cryp_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_dac.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_dac_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_def.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_dma.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_dma_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_flash.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_flash_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_flash_ramfunc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_gpio.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_gpio_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_i2c.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_i2s.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_irda.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_iwdg.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_lcd.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_nor.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_opamp.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_opamp_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_pcd.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_pcd_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_pwr.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_pwr_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_rcc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_rcc_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_rtc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_rtc_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_sd.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_smartcard.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_spi.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_spi_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_sram.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_tim.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_tim_ex.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_uart.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_usart.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_hal_wwdg.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_fsmc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_sdmmc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l100xba.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l151xba.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l151xca.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l151xdx.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l152xba.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l152xca.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l152xdx.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l162xca.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l162xdx.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\stm32l1xx.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Device\ST\STM32L1xx\Include\system_stm32l1xx.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\arm_common_tables.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\arm_const_structs.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\arm_math.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cm0.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cm0plus.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cm3.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cm4.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cm7.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cmFunc.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cmInstr.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_cmSimd.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_sc000.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\Include\core_sc300.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\CMSIS_HAL\RTOS\Template\cmsis_os.h">
+      <Filter>Header files\Device-specific files\HAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8l_hw.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8l_sw.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8tl5x.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32f0xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32f3xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_hw.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_sw.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm8l.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm8tl5x.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32f0xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32f3xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32l1xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_dxs.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_ecs.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_filter.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_globals.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_linrot.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_object.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm8l.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm8tl5x.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32f0xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32f3xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32l1xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_touchkey.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_types.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="debug.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="release.mak">
+      <Filter>Make files</Filter>
+    </None>
+    <None Include="stm32.mak">
+      <Filter>Source files\Device-specific files</Filter>
+    </None>
+    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm8l.h_TOADAPT">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </None>
+    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm8tl5x.h_TOADAPT">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </None>
+    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32f0xx.h_TOADAPT">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </None>
+    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32f3xx.h_TOADAPT">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </None>
+    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32l1xx.h_TOADAPT">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\License\license.txt">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </Text>
+    <Text Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\readme.txt">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </Text>
+    <Text Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\st_readme.txt">
+      <Filter>Source files\Device-specific files\FreeRTOS</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
