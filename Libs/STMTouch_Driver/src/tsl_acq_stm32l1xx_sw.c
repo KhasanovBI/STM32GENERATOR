@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_acq_stm32l1xx_sw.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains all functions to manage the acquisition
   *          on STM32l1xx products using the software mode.
   ******************************************************************************
@@ -60,8 +60,8 @@ typedef struct
 #define TSL_GPIO_PUPDR_NO_PUPD_Config(channel) (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->PUPDR &= (uint32_t)(~(3 << (2 * TSL_CHANNEL_IO(channel)))))
 #define TSL_GPIO_OTYPER_PP_Config(channel)     (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->OTYPER &= (uint32_t)(~(1 << TSL_CHANNEL_IO(channel))))
 #define TSL_GPIO_OSPEEDR_VL_Config(channel)    (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->OSPEEDR &= (uint32_t)~(3 << (2 * TSL_CHANNEL_IO(channel))))
-#define TSL_GPIO_BS_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRRL = (uint16_t)(1 << (TSL_CHANNEL_IO(channel))))
-#define TSL_GPIO_BR_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRRH = (uint16_t)(1 << (TSL_CHANNEL_IO(channel))))
+#define TSL_GPIO_BS_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRR = (uint16_t)(1 << (TSL_CHANNEL_IO(channel))))
+#define TSL_GPIO_BR_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRR = (uint32_t)(1 << (TSL_CHANNEL_IO(channel)+16)))
 
 
 /* Private variables ---------------------------------------------------------*/
@@ -76,15 +76,61 @@ TSL_tNb_T NumberOfChannels = 0;
 TSL_Status_enum_T TSL_Acq_Status = TSL_STATUS_BUSY;
 uint16_t GroupToCheck = 0;
 
-uint32_t TSL_GPIO_Clock_LookUpTable[] = {RCC_AHBPeriph_GPIOA, RCC_AHBPeriph_GPIOB, RCC_AHBPeriph_GPIOC, RCC_AHBPeriph_GPIOD, RCC_AHBPeriph_GPIOE, RCC_AHBPeriph_GPIOF, RCC_AHBPeriph_GPIOG, RCC_AHBPeriph_GPIOH};
-GPIO_TypeDef *TSL_GPIO_LookUpTable[] = {GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOF, GPIOG, GPIOH};
+#if defined(GPIOE_BASE)
+#define TSL_GPIOE_1 RCC_AHBENR_GPIOEEN
+#define TSL_GPIOE_2 GPIOE
+#else
+#define TSL_GPIOE_1 0
+#define TSL_GPIOE_2 0
+#endif
+
+#if defined(GPIOF_BASE)
+#define TSL_GPIOF_1 RCC_AHBENR_GPIOFEN
+#define TSL_GPIOF_2 GPIOF
+#else
+#define TSL_GPIOF_1 0
+#define TSL_GPIOF_2 0
+#endif
+
+#if defined(GPIOG_BASE)
+#define TSL_GPIOG_1 RCC_AHBENR_GPIOGEN
+#define TSL_GPIOG_2 GPIOG
+#else
+#define TSL_GPIOG_1 0
+#define TSL_GPIOG_2 0
+#endif
+
+#if defined(GPIOH_BASE)
+#define TSL_GPIOH_1 RCC_AHBENR_GPIOHEN
+#define TSL_GPIOH_2 GPIOH
+#else
+#define TSL_GPIOH_1 0
+#define TSL_GPIOH_2 0
+#endif
+
+#if defined(RI_HYSCR3_PE) || defined(RI_HYSCR3_PF)
+#define TSL_HYSCR3 (uint16_t *)&RI->HYSCR3, (uint16_t *)&RI->HYSCR3 + 1
+#else
+#define TSL_HYSCR3 0
+#endif
+
+#if defined(RI_HYSCR4_PG) || defined(RI_HYSCR4_PH)
+#define TSL_HYSCR4 (uint16_t *)&RI->HYSCR4, (uint16_t *)&RI->HYSCR4 + 1
+#else
+#define TSL_HYSCR4 0
+#endif
+
+uint32_t TSL_GPIO_Clock_LookUpTable[] = {RCC_AHBENR_GPIOAEN, RCC_AHBENR_GPIOBEN, RCC_AHBENR_GPIOCEN, RCC_AHBENR_GPIODEN,\
+                                         TSL_GPIOE_1, TSL_GPIOF_1, TSL_GPIOG_1, TSL_GPIOH_1};
+
+GPIO_TypeDef *TSL_GPIO_LookUpTable[] = {GPIOA, GPIOB, GPIOC, GPIOD, TSL_GPIOE_2, TSL_GPIOF_2, TSL_GPIOG_2, TSL_GPIOH_2};
 
 uint16_t *TSL_RI_HYSCR_LookUpTable[] =
 {
-    (uint16_t *)&RI->HYSCR1, (uint16_t *)&RI->HYSCR1 + 1,
-    (uint16_t *)&RI->HYSCR2, (uint16_t *)&RI->HYSCR2 + 1,
-    (uint16_t *)&RI->HYSCR3, (uint16_t *)&RI->HYSCR3 + 1,
-    (uint16_t *)&RI->HYSCR4, (uint16_t *)&RI->HYSCR4 + 1
+  (uint16_t *)&RI->HYSCR1, (uint16_t *)&RI->HYSCR1 + 1,
+  (uint16_t *)&RI->HYSCR2, (uint16_t *)&RI->HYSCR2 + 1,
+  TSL_HYSCR3,
+  TSL_HYSCR4
 };
 
 CONST TSL_RIConf_t TSL_RI_Conf_LookUpTable[101] =
@@ -278,7 +324,7 @@ TSL_Status_enum_T TSL_acq_Init(void)
   CONST TSL_ChannelSrc_T *p_chSrc = LocalBank->p_chSrc; // Pointer to the current channel
 
   /* Enables the comparator interface clock */
-  RCC->APB1ENR |= RCC_APB1Periph_COMP;
+  RCC->APB1ENR |= RCC_APB1ENR_COMPEN;
 
   //====================
   // GPIOs configuration
@@ -929,12 +975,10 @@ TSL_Bool_enum_T TSL_acq_TestFirstReferenceIsValid(TSL_ChannelData_T *pCh, TSL_tM
 
 
 #if defined(__IAR_SYSTEMS_ICC__) // IAR/EWARM
-#pragma optimize=medium
+#pragma optimize=low
 #elif defined(__CC_ARM) // Keil/MDK-ARM
 #pragma O1
 #pragma Ospace
-#elif defined(__TASKING__) // Altium/Tasking
-#pragma optimize O0
 #elif defined(__GNUC__) // Atollic/True Studio + Raisonance/RKit
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
@@ -951,28 +995,26 @@ void SoftDelay(uint16_t val)
   for (idx = val; idx > 0; idx--)
   {}
 }
-#if defined(__TASKING__)
-#pragma endoptimize
-#endif
 
 #if (TSLPRM_USE_SPREAD_SPECTRUM > 0)
 #if defined(__IAR_SYSTEMS_ICC__) // IAR/EWARM
-#pragma optimize=medium
+#pragma optimize=low
+// inline keyword for IAR Compiler is only available in High optimization mode! 
+void SwSpreadSpectrum(void)
 #elif defined(__CC_ARM) // Keil/MDK-ARM
 #pragma O1
 #pragma Ospace
-#elif defined(__TASKING__) // Altium/Tasking
-#pragma optimize O0
+__INLINE void SwSpreadSpectrum(void)
 #elif defined(__GNUC__) // Atollic/True Studio + Raisonance/RKit
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
+__INLINE void SwSpreadSpectrum(void)
 #endif
 /**
   * @brief  Spread Spectrum using a variable software delay.
   * @param  None
   * @retval None
   */
-__INLINE void SwSpreadSpectrum(void)
 {
   uint8_t idx;
 
@@ -987,9 +1029,6 @@ __INLINE void SwSpreadSpectrum(void)
 
   while (--idx) {}
 }
-#if defined(__TASKING__)
-#pragma endoptimize
-#endif
 #endif
 
 

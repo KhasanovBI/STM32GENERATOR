@@ -2,9 +2,9 @@
   ******************************************************************************
   * @file    tsl_object.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
-  * @brief   This file contains all functions to manage the sensors in general.
+  * @version V2.1.1
+  * @date    25-August-2014
+  * @brief   This file contains all functions to manage the sensors.
   ******************************************************************************
   * @attention
   *

@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_linrot.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains all functions to manage Linear and Rotary sensors.
   ******************************************************************************
   * @attention
@@ -835,7 +835,6 @@ void TSL_linrot_SetStateOff(void)
 }
 
 
-#if !defined(TSLPRM_STM8TL5X) && !defined(STM8TL5X)
 /**
   * @brief  Go in Off state with sensor in "Burst mode only"
   * @param  None
@@ -847,7 +846,6 @@ void TSL_linrot_SetStateBurstOnly(void)
   THIS_CHANGE = TSL_STATE_CHANGED;
   TSL_linrot_ProcessCh_All_SetStatus(TSL_OBJ_STATUS_BURST_ONLY);
 }
-#endif
 
 
 /**

@@ -2,9 +2,9 @@
   ******************************************************************************
   * @file    tsl_acq.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
-  * @brief   This file contains all functions to manage the acquisition in general.
+  * @version V2.1.1
+  * @date    25-August-2014
+  * @brief   This file contains all functions to manage the acquisition.
   ******************************************************************************
   * @attention
   *
@@ -31,10 +31,7 @@
 
 /* Private typedefs ----------------------------------------------------------*/
 /* Private defines -----------------------------------------------------------*/
-
 /* Private macros ------------------------------------------------------------*/
-#define IS_BANK_INDEX_OK(INDEX)  (((INDEX) == 0) || (((INDEX) > 0) && ((INDEX) < TSLPRM_TOTAL_BANKS)))
-
 /* Private variables ---------------------------------------------------------*/
 /* Private functions prototype -----------------------------------------------*/
 
@@ -56,8 +53,10 @@ TSL_Status_enum_T TSL_acq_BankGetResult(TSL_tIndex_T idx_bk, TSL_pFuncMeasFilter
   CONST TSL_ChannelDest_T *pchDest = bank->p_chDest;
   CONST TSL_ChannelSrc_T *pchSrc = bank->p_chSrc;
 
-  // Check parameters (if USE_FULL_ASSERT is defined)
-  assert_param(IS_BANK_INDEX_OK(idx_bk));
+  if (idx_bk >= TSLPRM_TOTAL_BANKS)
+  {
+    return TSL_STATUS_ERROR;
+  }
 
   // For all channels in the bank copy the measure + calculate delta and store them.
   for (idx_ch = 0; idx_ch < bank->NbChannels; idx_ch++)
@@ -173,8 +172,10 @@ TSL_Status_enum_T TSL_acq_BankCalibrate(TSL_tIndex_T idx_bk)
   CONST  TSL_ChannelDest_T *pchDest; // Pointer to the current channel
   CONST TSL_ChannelSrc_T *pchSrc; // Pointer to the current channel
 
-  // Check parameters (if USE_FULL_ASSERT is defined)
-  assert_param(IS_BANK_INDEX_OK(idx_bk));
+  if (idx_bk >= TSLPRM_TOTAL_BANKS)
+  {
+    return TSL_STATUS_ERROR;
+  }
 
   bank = &(TSL_Globals.Bank_Array[idx_bk]);
 
@@ -315,8 +316,10 @@ void TSL_acq_BankClearData(TSL_tIndex_T idx_bk)
   CONST TSL_Bank_T *bank = &(TSL_Globals.Bank_Array[idx_bk]);
   CONST TSL_ChannelDest_T *pchDest = bank->p_chDest;
 
-  // Check parameters (if USE_FULL_ASSERT is defined)
-  assert_param(IS_BANK_INDEX_OK(idx_bk));
+  if (idx_bk >= TSLPRM_TOTAL_BANKS)
+  {
+    return;
+  }
 
   // For all channels of the bank
   for (idx_ch = 0; idx_ch < bank->NbChannels; idx_ch++)
@@ -341,8 +344,10 @@ TSL_Status_enum_T TSL_acq_ZoneConfig(CONST TSL_Zone_T *zone, TSL_tIndex_T idx_bk
 {
   TSL_Status_enum_T retval;
 
-  // Check parameters (if USE_FULL_ASSERT is defined)
-  assert_param(IS_BANK_INDEX_OK(idx_bk));
+  if (idx_bk >= TSLPRM_TOTAL_BANKS)
+  {
+    return TSL_STATUS_ERROR;
+  }
 
   TSL_Globals.This_Zone = zone;
 

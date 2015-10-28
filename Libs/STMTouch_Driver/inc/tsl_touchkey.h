@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_touchkey.h
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains external declarations of the tsl_touchkey.c file.
   ******************************************************************************
   * @attention
@@ -108,9 +108,7 @@ void TSL_tkey_Process(void);
 // Utility functions
 void TSL_tkey_SetStateCalibration(TSL_tCounter_T delay);
 void TSL_tkey_SetStateOff(void);
-#if !defined(TSLPRM_STM8TL5X) && !defined(STM8TL5X)
 void TSL_tkey_SetStateBurstOnly(void);
-#endif
 TSL_StateId_enum_T TSL_tkey_GetStateId(void);
 TSL_StateMask_enum_T TSL_tkey_GetStateMask(void);
 TSL_tNb_T TSL_tkey_IsChanged(void);

@@ -2,9 +2,9 @@
   ******************************************************************************
   * @file    tsl_time.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
-  * @brief   This file contains all functions to manage the timings in general.
+  * @version V2.1.1
+  * @date    25-August-2014
+  * @brief   This file contains all functions to manage the timings for ECS and DTO.
   ******************************************************************************
   * @attention
   *
@@ -58,12 +58,6 @@ void TSL_tim_ProcessIT(void)
     }
     count_1s = 0;
   }
-
-// Callback function
-#if TSLPRM_USE_TIMER_CALLBACK > 0
-  TSL_CallBack_TimerTick();
-#endif
-
 }
 
 

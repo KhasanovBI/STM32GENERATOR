@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_dxs.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains all functions to manage the
   *          Detection Exclusion System (DxS) algorithm.
   ******************************************************************************

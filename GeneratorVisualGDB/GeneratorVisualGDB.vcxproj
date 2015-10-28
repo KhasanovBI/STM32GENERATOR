@@ -117,13 +117,7 @@
     <ClCompile Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Src\stm32l1xx_ll_sdmmc.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32f0xx.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32f3xx.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_hw.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_sw.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8l_hw.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8l_sw.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8tl5x.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_dxs.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_ecs.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_filter.c" />
@@ -131,14 +125,11 @@
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_linrot.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_object.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32f0xx.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32f3xx.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32l1xx.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm8l.c" />
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm8tl5x.c" />
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_touchkey.c" />
     <ClCompile Include="GeneratorVisualGDB.c" />
     <ClCompile Include="system_stm32l1xx.c" />
+    <ClCompile Include="tsl_user.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h" />
@@ -231,19 +222,13 @@
     <ClInclude Include="..\..\..\Users\BrainBot\AppData\Local\VisualGDB\EmbeddedBSPs\arm-eabi\com.sysprogs.arm.stm32\STM32L1xxxx\STM32L1xx_HAL_Driver\Inc\stm32l1xx_ll_sdmmc.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32f0xx.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32f3xx.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_hw.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_sw.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8l_hw.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8l_sw.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8tl5x.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32f0xx.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32f3xx.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32l1xx.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm8l.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm8tl5x.h" />
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_tsc.h" />
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_conf.h" />
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32l1xx_template.h" />
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_conf_tsc_template.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_dxs.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_ecs.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_filter.h" />
@@ -251,22 +236,14 @@
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_linrot.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_object.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32f0xx.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32f3xx.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32l1xx.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm8l.h" />
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm8tl5x.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_touchkey.h" />
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_types.h" />
     <ClInclude Include="FreeRTOSConfig.h" />
     <ClInclude Include="stm32l1xx_hal_conf.h" />
+    <ClInclude Include="tsl_user.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32f0xx.h_TOADAPT" />
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32f3xx.h_TOADAPT" />
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32l1xx.h_TOADAPT" />
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm8l.h_TOADAPT" />
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm8tl5x.h_TOADAPT" />
     <None Include="debug.mak" />
     <None Include="Makefile" />
     <None Include="release.mak" />

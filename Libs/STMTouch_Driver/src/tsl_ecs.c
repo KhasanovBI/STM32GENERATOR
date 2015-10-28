@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_ecs.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains all functions to manage the ECS.
   ******************************************************************************
   * @attention
@@ -42,9 +42,6 @@
 #define THIS_LINROT_NB_CHANNELS  TSL_Globals.This_LinRot->NbChannels
 
 /* Private macros ------------------------------------------------------------*/
-#define IS_K_COEFF_OK(COEFF)            (((COEFF) == 0) || (((COEFF) > 0) && ((COEFF) < 256)))
-#define IS_POINTER_INITIALIZED(POINTER) ((POINTER) != 0)
-
 /* Private variables ---------------------------------------------------------*/
 /* Private functions prototype -----------------------------------------------*/
 
@@ -67,9 +64,9 @@ TSL_tKCoeff_T TSL_ecs_CalcK(TSL_ObjectGroup_T *objgrp, TSL_tKCoeff_T k_slow, TSL
   TSL_tNb_T nb_channels = 0; // Number of channels inside current object
   TSL_ChannelData_T *p_Ch = 0;
 
-  // Check parameters (if USE_FULL_ASSERT is defined)
-  assert_param(IS_K_COEFF_OK(k_slow));
-  assert_param(IS_K_COEFF_OK(k_fast));
+  // Check parameters
+  if (k_slow > 255) k_slow = 255;
+  if (k_fast > 255) k_fast = 255;
 
   pobj = objgrp->p_Obj; // First object in the group
 
@@ -109,8 +106,8 @@ TSL_tKCoeff_T TSL_ecs_CalcK(TSL_ObjectGroup_T *objgrp, TSL_tKCoeff_T k_slow, TSL
     }
 #endif
 
-    // Check channel pointer variable (if USE_FULL_ASSERT is defined)
-    assert_param(IS_POINTER_INITIALIZED(p_Ch));
+    // Check channel pointer variable
+    if (p_Ch == 0) return 0;
 
     // Check all channels of current object
     for (idx_ch = 0; idx_ch < nb_channels; idx_ch++)
@@ -185,8 +182,8 @@ void TSL_ecs_ProcessK(TSL_ObjectGroup_T *objgrp, TSL_tKCoeff_T Kcoeff)
   TSL_ChannelData_T *p_Ch = 0;
   void(*pFunc_SetStateCalibration)(TSL_tCounter_T delay) = 0;
 
-  // Check parameters (if USE_FULL_ASSERT is defined)
-  assert_param(IS_K_COEFF_OK(Kcoeff));
+  // Check parameter
+  if (Kcoeff > 255) Kcoeff = 255;
 
   pobj = objgrp->p_Obj; // First object in the group
 
@@ -231,8 +228,8 @@ void TSL_ecs_ProcessK(TSL_ObjectGroup_T *objgrp, TSL_tKCoeff_T Kcoeff)
     }
 #endif
 
-    // Check channel pointer variable (if USE_FULL_ASSERT is defined)
-    assert_param(IS_POINTER_INITIALIZED(p_Ch));
+    // Check channel pointer variable
+    if (p_Ch == 0) return;
 
     // Calculate the new reference + rest for all channels
     for (idx_ch = 0; idx_ch < nb_channels; idx_ch++)

@@ -2,9 +2,9 @@
   ******************************************************************************
   * @file    tsl.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
-  * @brief   This file contains the STMTouch Driver main functions.
+  * @version V2.1.1
+  * @date    25-August-2014
+  * @brief   This file contains the driver main functions.
   ******************************************************************************
   * @attention
   *
@@ -46,14 +46,18 @@ TSL_Status_enum_T TSL_Init(CONST TSL_Bank_T *bank)
   // Get banks array
   TSL_Globals.Bank_Array = bank;
 
-  // Initialization of the timing module
-  retval = TSL_tim_Init();
+  // Initialize the delay that will be used to discharge the capacitors
+  TSL_Globals.DelayDischarge = (uint32_t)((TSLPRM_DELAY_DISCHARGE_ALL * (uint32_t)(SystemCoreClock/1000000)) / 72);
+  
+  // Note: The timing configuration (Systick) must be done in the user code.
 
-  if (retval == TSL_STATUS_OK)
-  {
-    // Initialization of the acquisition module
-    retval = TSL_acq_Init();
-  }
+  // Initialization of the acquisition module
+#ifdef __TSL_ACQ_TSC_H
+  // Note: The TSC peripheral initialization must be done in the user code.
+  retval = TSL_STATUS_OK;
+#else
+  retval = TSL_acq_Init();
+#endif
 
   return retval;
 }

@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_check_config.h
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains the check of all parameters defined in the
   *          common configuration file.
   ******************************************************************************
@@ -371,22 +371,22 @@
 
 //------------------------------------------------------------------------------
 
-#ifndef TSLPRM_USE_ACQ_INTERRUPT
-#error "TSLPRM_USE_ACQ_INTERRUPT is not defined."
-#endif
-
-#if ((TSLPRM_USE_ACQ_INTERRUPT != 0) && (TSLPRM_USE_ACQ_INTERRUPT != 1))
-#error "TSLPRM_USE_ACQ_INTERRUPT is out of range (0 .. 1)."
-#endif
-
-//------------------------------------------------------------------------------
-
 #ifndef TSLPRM_DTO
 #error "TSLPRM_DTO is not defined."
 #endif
 
 #if ((TSLPRM_DTO < 0) || (TSLPRM_DTO > 63))
 #error "TSLPRM_DTO is out of range (0 .. 63)."
+#endif
+
+//------------------------------------------------------------------------------
+
+#ifndef TSLPRM_USE_DXS
+#error "TSLPRM_USE_DXS is not defined."
+#endif
+
+#if ((TSLPRM_USE_DXS < 0) || (TSLPRM_USE_DXS > 1))
+#error "TSLPRM_USE_DXS is out of range (0 .. 1)."
 #endif
 
 //------------------------------------------------------------------------------
@@ -402,48 +402,22 @@
 
 //------------------------------------------------------------------------------
 
-#ifndef TSLPRM_USE_DXS
-#error "TSLPRM_USE_DXS is not defined."
+#ifndef TSLPRM_DELAY_DISCHARGE_ALL
+#error "TSLPRM_DELAY_DISCHARGE_ALL is not defined."
 #endif
 
-#if ((TSLPRM_USE_DXS < 0) || (TSLPRM_USE_DXS > 1))
-#error "TSLPRM_USE_DXS is out of range (0 .. 1)."
+#if ((TSLPRM_DELAY_DISCHARGE_ALL < 0) || (TSLPRM_DELAY_DISCHARGE_ALL > 65535))
+#error "TSLPRM_DELAY_DISCHARGE_ALL is out of range (0 .. 65535)."
 #endif
 
 //------------------------------------------------------------------------------
 
-#ifndef TSLPRM_USE_TIMER_CALLBACK
-#error "TSLPRM_USE_TIMER_CALLBACK is not defined."
+#ifndef TSLPRM_IODEF
+#error "TSLPRM_IODEF is not defined."
 #endif
 
-#if ((TSLPRM_USE_TIMER_CALLBACK != 0) && (TSLPRM_USE_TIMER_CALLBACK != 1))
-#error "TSLPRM_USE_TIMER_CALLBACK is out of range (0 .. 1)."
-#endif
-
-//==============================================================================
-// Specific parameters check
-//==============================================================================
-
-#if defined(STM8L10X) || defined(STM8L15X_LD) || defined(STM8L15X_MD) || defined(STM8L15X_MDP) || defined(STM8L15X_HD)
-#include "tsl_check_config_stm8l.h"
-#endif
-
-#if defined(STM8TL5X)
-#include "tsl_check_config_stm8tl5x.h"
-#endif
-
-#if defined(STM32L1XX_MD) || defined(STM32L1XX_MDP) || defined(STM32L1XX_HD) || defined(STM32L1XX_XL)
-#include "tsl_check_config_stm32l1xx.h"
-#endif
-
-#if defined(STM32F0XX) || defined(STM32F0XX_MD) || defined(STM32F0XX_HD) ||\
-    defined(STM32F051) || defined(STM32F072) || defined(STM32F042)
-#include "tsl_check_config_stm32f0xx.h"
-#endif
-
-#if defined(STM32F303xC) || defined(STM32F334x8) || defined(STM32F303x8) || defined(STM32F301x8) || defined(STM32F302x8) ||\
-    defined(STM32F37X)
-#include "tsl_check_config_stm32f3xx.h"
+#if ((TSLPRM_IODEF < 0) || (TSLPRM_IODEF > 1))
+#error "TSLPRM_IODEF is out of range (0 .. 1)."
 #endif
 
 #endif /* __TSL_CHECK_CONFIG_H */

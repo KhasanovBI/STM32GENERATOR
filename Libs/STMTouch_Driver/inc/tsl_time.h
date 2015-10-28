@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_time.h
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains external declarations of the tsl_time.c file.
   ******************************************************************************
   * @attention
@@ -30,51 +30,7 @@
 #define __TSL_TIME_H
 
 /* Includes ------------------------------------------------------------------*/
-
-#if defined(STM8L10X) || defined(STM8L15X_MD) || defined(STM8L15X_MDP) || defined(STM8L15X_HD)
-#include "tsl_acq_stm8l_sw.h" // Software acquisition
-#include "tsl_time_stm8l.h"
-#endif
-
-#if defined(STM8L15X_LD) 
-#if defined(TSLPRM_STM8L1XX_SW_ACQ)
-#include "tsl_acq_stm8l_sw.h" // Software acquisition
-#else 
-#include "tsl_acq_stm8l_hw.h" // Hardware acquisition with Timers (default)
-#endif
-#include "tsl_time_stm8l.h"
-#endif
-
-#if defined(STM8TL5X)
-#include "tsl_acq_stm8tl5x.h"
-#include "tsl_time_stm8tl5x.h"
-#endif
-
-#if defined(STM32L1XX_MD)
-#include "tsl_acq_stm32l1xx_sw.h" // Software acquisition only
-#include "tsl_time_stm32l1xx.h"
-#endif
-
-#if defined(STM32L1XX_MDP) || defined(STM32L1XX_HD) || defined(STM32L1XX_XL)
-#if defined(TSLPRM_STM32L1XX_SW_ACQ)
-#include "tsl_acq_stm32l1xx_sw.h" // Software acquisition
-#else
-#include "tsl_acq_stm32l1xx_hw.h" // Hardware acquisition with Timers (default)
-#endif
-#include "tsl_time_stm32l1xx.h"
-#endif
-
-#if defined(STM32F0XX) || defined(STM32F0XX_MD) || defined(STM32F0XX_HD) ||\
-    defined(STM32F051) || defined(STM32F072) || defined(STM32F042)
-#include "tsl_acq_stm32f0xx.h"
-#include "tsl_time_stm32f0xx.h"
-#endif
-
-#if defined(STM32F303xC) || defined(STM32F334x8) || defined(STM32F303x8) || defined(STM32F301x8) || defined(STM32F302x8) ||\
-    defined(STM32F37X)
-#include "tsl_acq_stm32f3xx.h"
-#include "tsl_time_stm32f3xx.h"
-#endif
+#include "tsl_conf.h"
 
 /* Exported functions ------------------------------------------------------- */
 

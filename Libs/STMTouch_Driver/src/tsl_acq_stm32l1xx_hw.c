@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_acq_stm32l1xx_hw.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains all functions to manage the acquisition
   *          on STM32l1xx products using the Hardware mode (with Timers).
   ******************************************************************************
@@ -82,8 +82,8 @@ typedef struct
 #define TSL_GPIO_OTYPER_PP_Config(channel)     (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->OTYPER &= (uint32_t)(~(1 << TSL_CHANNEL_IO(channel))))
 #define TSL_GPIO_OSPEEDR_VL_Config(channel)    (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->OSPEEDR &= (uint32_t)~(3 << (2 * TSL_CHANNEL_IO(channel))))
 #define TSL_GPIO_AFR_Config(channel)           (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->AFR[TSL_GPIO_AFR(channel)] |= (0x0E << (TSL_GPIO_AFR_Shift(channel))))
-#define TSL_GPIO_BS_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRRL = (uint16_t)(1 << (TSL_CHANNEL_IO(channel))))
-#define TSL_GPIO_BR_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRRH = (uint16_t)(1 << (TSL_CHANNEL_IO(channel))))
+#define TSL_GPIO_BS_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRR = (uint16_t)(1 << (TSL_CHANNEL_IO(channel))))
+#define TSL_GPIO_BR_Config(channel)            (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->BSRR = (uint32_t)(1 << (TSL_CHANNEL_IO(channel)+16)))
 
 #define TSL_GPIO_AFR_NOAF_Config(channel)      (TSL_GPIO_LookUpTable[TSL_CHANNEL_PORT(channel)]->AFR[TSL_GPIO_AFR(channel)] &= (uint32_t)(~(0x0F << (TSL_GPIO_AFR_Shift(channel)))))
 
@@ -99,18 +99,64 @@ TSL_Status_enum_T TSL_Acq_Status = TSL_STATUS_BUSY;
 static uint16_t GroupToCheck = 0;
 static TSL_tIndex_T NumberOfChannelChecked = 0;
 
-uint32_t TSL_GPIO_Clock_LookUpTable[] = {RCC_AHBPeriph_GPIOA, RCC_AHBPeriph_GPIOB, RCC_AHBPeriph_GPIOC, RCC_AHBPeriph_GPIOD, RCC_AHBPeriph_GPIOE, RCC_AHBPeriph_GPIOF, RCC_AHBPeriph_GPIOG, RCC_AHBPeriph_GPIOH};
-GPIO_TypeDef *TSL_GPIO_LookUpTable[] = {GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOF, GPIOG, GPIOH};
+#if defined(GPIOE_BASE)
+#define TSL_GPIOE_1 RCC_AHBENR_GPIOEEN
+#define TSL_GPIOE_2 GPIOE
+#else
+#define TSL_GPIOE_1 0
+#define TSL_GPIOE_2 0
+#endif
 
-uint32_t *TSL_RI_ASCR_LookUpTable[] = {(uint32_t *)&RI->ASCR1, (uint32_t *)&RI->ASCR2};
+#if defined(GPIOF_BASE)
+#define TSL_GPIOF_1 RCC_AHBENR_GPIOFEN
+#define TSL_GPIOF_2 GPIOF
+#else
+#define TSL_GPIOF_1 0
+#define TSL_GPIOF_2 0
+#endif
+
+#if defined(GPIOG_BASE)
+#define TSL_GPIOG_1 RCC_AHBENR_GPIOGEN
+#define TSL_GPIOG_2 GPIOG
+#else
+#define TSL_GPIOG_1 0
+#define TSL_GPIOG_2 0
+#endif
+
+#if defined(GPIOH_BASE)
+#define TSL_GPIOH_1 RCC_AHBENR_GPIOHEN
+#define TSL_GPIOH_2 GPIOH
+#else
+#define TSL_GPIOH_1 0
+#define TSL_GPIOH_2 0
+#endif
+
+#if defined(RI_HYSCR3_PE) || defined(RI_HYSCR3_PF)
+#define TSL_HYSCR3 (uint16_t *)&RI->HYSCR3, (uint16_t *)&RI->HYSCR3 + 1
+#else
+#define TSL_HYSCR3 0
+#endif
+
+#if defined(RI_HYSCR4_PG) || defined(RI_HYSCR4_PH)
+#define TSL_HYSCR4 (uint16_t *)&RI->HYSCR4, (uint16_t *)&RI->HYSCR4 + 1
+#else
+#define TSL_HYSCR4 0
+#endif
+
+uint32_t TSL_GPIO_Clock_LookUpTable[] = {RCC_AHBENR_GPIOAEN, RCC_AHBENR_GPIOBEN, RCC_AHBENR_GPIOCEN, RCC_AHBENR_GPIODEN,\
+                                         TSL_GPIOE_1, TSL_GPIOF_1, TSL_GPIOG_1, TSL_GPIOH_1};
+
+GPIO_TypeDef *TSL_GPIO_LookUpTable[] = {GPIOA, GPIOB, GPIOC, GPIOD, TSL_GPIOE_2, TSL_GPIOF_2, TSL_GPIOG_2, TSL_GPIOH_2};
 
 uint16_t *TSL_RI_HYSCR_LookUpTable[] =
 {
   (uint16_t *)&RI->HYSCR1, (uint16_t *)&RI->HYSCR1 + 1,
   (uint16_t *)&RI->HYSCR2, (uint16_t *)&RI->HYSCR2 + 1,
-  (uint16_t *)&RI->HYSCR3, (uint16_t *)&RI->HYSCR3 + 1,
-  (uint16_t *)&RI->HYSCR4, (uint16_t *)&RI->HYSCR4 + 1
+  TSL_HYSCR3,
+  TSL_HYSCR4
 };
+
+uint32_t *TSL_RI_ASCR_LookUpTable[] = {(uint32_t *)&RI->ASCR1, (uint32_t *)&RI->ASCR2};
 
 uint32_t *TSL_RI_ASMR_LookUpTable[] = {(uint32_t *)&RI->ASMR1, (uint32_t *)&RI->ASMR2, (uint32_t *)&RI->ASMR3, 0, 0, (uint32_t *)&RI->ASMR4, (uint32_t *)&RI->ASMR5};
 uint32_t *TSL_RI_CMR_LookUpTable[] = {(uint32_t *)&RI->CMR1, (uint32_t *)&RI->CMR2, (uint32_t *)&RI->CMR3, 0, 0, (uint32_t *)&RI->CMR4, (uint32_t *)&RI->CMR5};
@@ -378,6 +424,10 @@ void TSL_Init_TIMs(void)
   TIM11->DIER |= 0x03;
   // Start slave timer
   TIM11->CR1 |= 0x01;
+	
+	// Init NVIC
+  HAL_NVIC_SetPriority(TIM11_IRQn, 1, 1);
+  HAL_NVIC_EnableIRQ(TIM11_IRQn);	
 }
 
 
@@ -434,15 +484,7 @@ void TSL_Init_RI(void)
   * @retval retval
   */
 TSL_Status_enum_T TSL_acq_Init(void)
-{
-  NVIC_InitTypeDef  NVIC_InitStructure;
-
-  NVIC_InitStructure.NVIC_IRQChannel = TIM11_IRQn;
-  NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-  NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-  NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  NVIC_Init(&NVIC_InitStructure);
-
+{	
   TSL_Init_GPIOs();
   TSL_Init_TIMs();
   TSL_Init_RI();
@@ -833,12 +875,10 @@ TSL_Bool_enum_T TSL_acq_TestFirstReferenceIsValid(TSL_ChannelData_T *pCh, TSL_tM
 
 
 #if defined(__IAR_SYSTEMS_ICC__) // IAR/EWARM
-#pragma optimize=medium
+#pragma optimize=low
 #elif defined(__CC_ARM) // Keil/MDK-ARM
 #pragma O1
 #pragma Ospace
-#elif defined(__TASKING__) // Altium/Tasking
-#pragma optimize O0
 #elif defined(__GNUC__) // Atollic/True Studio + Raisonance/RKit
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
@@ -855,8 +895,5 @@ void SoftDelay(uint16_t val)
   for (idx = val; idx > 0; idx--)
   {}
 }
-#if defined(__TASKING__)
-#pragma endoptimize
-#endif
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

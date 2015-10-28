@@ -214,27 +214,6 @@
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq.c">
       <Filter>Source files\Device-specific files\TouchLib</Filter>
     </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8l_hw.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8l_sw.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm8tl5x.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32f0xx.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32f3xx.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_hw.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_sw.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_dxs.c">
       <Filter>Source files\Device-specific files\TouchLib</Filter>
     </ClCompile>
@@ -256,22 +235,16 @@
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time.c">
       <Filter>Source files\Device-specific files\TouchLib</Filter>
     </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm8l.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm8tl5x.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32f0xx.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32f3xx.c">
-      <Filter>Source files\Device-specific files\TouchLib</Filter>
-    </ClCompile>
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_time_stm32l1xx.c">
       <Filter>Source files\Device-specific files\TouchLib</Filter>
     </ClCompile>
     <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_touchkey.c">
+      <Filter>Source files\Device-specific files\TouchLib</Filter>
+    </ClCompile>
+    <ClCompile Include="tsl_user.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Libs\STMTouch_Driver\src\tsl_acq_stm32l1xx_sw.c">
       <Filter>Source files\Device-specific files\TouchLib</Filter>
     </ClCompile>
   </ItemGroup>
@@ -552,43 +525,19 @@
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq.h">
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8l_hw.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8l_sw.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm8tl5x.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32f0xx.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32f3xx.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_hw.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_sw.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config.h">
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm8l.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm8tl5x.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32f0xx.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32f3xx.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_stm32l1xx.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_check_config_tsc.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32l1xx_template.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_conf_tsc_template.h">
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_dxs.h">
@@ -612,18 +561,6 @@
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time.h">
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm8l.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm8tl5x.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32f0xx.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32f3xx.h">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </ClInclude>
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_time_stm32l1xx.h">
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
@@ -631,6 +568,15 @@
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
     <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_types.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_conf.h">
+      <Filter>Header files\Device-specific files\TouchLib</Filter>
+    </ClInclude>
+    <ClInclude Include="tsl_user.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Libs\STMTouch_Driver\inc\tsl_acq_stm32l1xx_sw.h">
       <Filter>Header files\Device-specific files\TouchLib</Filter>
     </ClInclude>
   </ItemGroup>
@@ -644,21 +590,6 @@
     </None>
     <None Include="stm32.mak">
       <Filter>Source files\Device-specific files</Filter>
-    </None>
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm8l.h_TOADAPT">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </None>
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm8tl5x.h_TOADAPT">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </None>
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32f0xx.h_TOADAPT">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </None>
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32f3xx.h_TOADAPT">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
-    </None>
-    <None Include="..\Libs\STMTouch_Driver\inc\tsl_conf_stm32l1xx.h_TOADAPT">
-      <Filter>Header files\Device-specific files\TouchLib</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

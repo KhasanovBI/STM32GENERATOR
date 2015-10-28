@@ -2,9 +2,10 @@
   ******************************************************************************
   * @file    tsl_acq_stm32l1xx_sw.h
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
-  * @brief   This file contains external declarations of the tsl_acq_stm32l1xx_sw.c file.
+  * @version V2.1.1
+  * @date    25-August-2014
+  * @brief   This file contains all functions prototypes that manage the SW acquisition
+  * on STM32L1xx devices.
   ******************************************************************************
   * @attention
   *
@@ -30,9 +31,9 @@
 #define __TSL_ACQ_STM32L1XX_SW_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32l1xx.h"
-#include "tsl_conf_stm32l1xx.h"
+#include "tsl_conf.h"
 #include "tsl_types.h"
+#include "tsl_check_config_stm32l1xx.h"
 
 /* Defines -------------------------------------------------------------------*/
 
@@ -44,6 +45,8 @@
 #define enableInterrupts()  {SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk;}
 #define disableInterrupts() {SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;}
 
+/** Groups list
+  */
 enum
 {
   GR1,
@@ -217,7 +220,7 @@ typedef uint8_t TSL_Conf_t;
   */
 typedef struct
 {
-  TSL_tIndex_T  IdxDest; /**< Index in the Channel data array */
+  TSL_tIndex_T IdxDest; /**< Index in the Channel data array */
 } TSL_ChannelDest_T;
 
 /** Channel Source and Configuration
@@ -271,9 +274,9 @@ typedef struct
 } TSL_Bank_T;
 
 /* Exported variables --------------------------------------------------------*/
-
 /* Exported macros -----------------------------------------------------------*/
 /* Exported functions ------------------------------------------------------- */
+
 TSL_Status_enum_T TSL_acq_Init(void);
 TSL_Status_enum_T TSL_acq_BankConfig(TSL_tIndex_T idx_bk);
 void TSL_acq_BankStartAcq(void);
@@ -281,7 +284,6 @@ TSL_Status_enum_T TSL_acq_BankWaitEOC(void);
 void TSL_acq_ProcessIT(void);
 TSL_tMeas_T TSL_acq_GetMeas(TSL_tIndex_T index);
 TSL_AcqStatus_enum_T TSL_acq_CheckNoise(void);
-
 TSL_Bool_enum_T TSL_acq_UseFilter(TSL_ChannelData_T *pCh);
 TSL_tDelta_T TSL_acq_ComputeDelta(TSL_tRef_T ref, TSL_tMeas_T meas);
 TSL_tMeas_T TSL_acq_ComputeMeas(TSL_tRef_T ref, TSL_tDelta_T delta);

@@ -2,9 +2,10 @@
   ******************************************************************************
   * @file    tsl_acq_stm32l1xx_hw.h
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
-  * @brief   This file contains external declarations of the tsl_acq_stm32l1xx_hw.c file.
+  * @version V2.1.1
+  * @date    25-August-2014
+  * @brief   This file contains all functions prototypes that manage the HW acquisition
+  * on STM32L1xx devices.
   ******************************************************************************
   * @attention
   *
@@ -30,9 +31,9 @@
 #define __TSL_ACQ_STM32L1XX_HW_H
 
 /* Includes ------------------------------------------------------------------*/
-#include "stm32l1xx.h"
-#include "tsl_conf_stm32l1xx.h"
+#include "tsl_conf.h"
 #include "tsl_types.h"
+#include "tsl_check_config_stm32l1xx.h"
 
 /* Defines -------------------------------------------------------------------*/
 
@@ -118,8 +119,8 @@ enum
 };
 
 /** GPIOs list:
-    High significant nibble for the IO port (GPIOA:0,...,GPIOG:6)
-    Low significant nibble for the IO number (pin0:0,...,pin15:F)
+    - High significant nibble for the IO port (GPIOA:0,...,GPIOG:6)
+    - Low significant nibble for the IO number (pin0:0,...,pin15:F)
   */
 enum
 {
@@ -263,10 +264,7 @@ typedef struct
 } TSL_Bank_T;
 
 /* Exported variables --------------------------------------------------------*/
-
 /* Exported macros -----------------------------------------------------------*/
-
-
 /* Exported functions ------------------------------------------------------- */
 
 TSL_Status_enum_T TSL_acq_Init(void);

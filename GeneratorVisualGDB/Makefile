@@ -35,7 +35,7 @@ error:
 	$(error Invalid configuration, please check your inputs)
 endif
 
-SOURCEFILES := $(BSP_ROOT)/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c $(BSP_ROOT)/FreeRTOS/Source/croutine.c $(BSP_ROOT)/FreeRTOS/Source/event_groups.c $(BSP_ROOT)/FreeRTOS/Source/list.c $(BSP_ROOT)/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c $(BSP_ROOT)/FreeRTOS/Source/portable/MemMang/heap_4.c $(BSP_ROOT)/FreeRTOS/Source/queue.c $(BSP_ROOT)/FreeRTOS/Source/tasks.c $(BSP_ROOT)/FreeRTOS/Source/timers.c $(BSP_ROOT)/STM32L1xxxx/StartupFiles/startup_stm32l152xc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_comp.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_crc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cryp.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cryp_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dac.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dac_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2s.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_irda.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_iwdg.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_nor.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_opamp.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_opamp_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_sd.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_smartcard.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_sram.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_usart.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_wwdg.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_fsmc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_sdmmc.c ../Libs/STMTouch_Driver/src/tsl.c ../Libs/STMTouch_Driver/src/tsl_acq.c ../Libs/STMTouch_Driver/src/tsl_acq_stm32f0xx.c ../Libs/STMTouch_Driver/src/tsl_acq_stm32f3xx.c ../Libs/STMTouch_Driver/src/tsl_acq_stm32l1xx_hw.c ../Libs/STMTouch_Driver/src/tsl_acq_stm32l1xx_sw.c ../Libs/STMTouch_Driver/src/tsl_acq_stm8l_hw.c ../Libs/STMTouch_Driver/src/tsl_acq_stm8l_sw.c ../Libs/STMTouch_Driver/src/tsl_acq_stm8tl5x.c ../Libs/STMTouch_Driver/src/tsl_dxs.c ../Libs/STMTouch_Driver/src/tsl_ecs.c ../Libs/STMTouch_Driver/src/tsl_filter.c ../Libs/STMTouch_Driver/src/tsl_globals.c ../Libs/STMTouch_Driver/src/tsl_linrot.c ../Libs/STMTouch_Driver/src/tsl_object.c ../Libs/STMTouch_Driver/src/tsl_time.c ../Libs/STMTouch_Driver/src/tsl_time_stm32f0xx.c ../Libs/STMTouch_Driver/src/tsl_time_stm32f3xx.c ../Libs/STMTouch_Driver/src/tsl_time_stm32l1xx.c ../Libs/STMTouch_Driver/src/tsl_time_stm8l.c ../Libs/STMTouch_Driver/src/tsl_time_stm8tl5x.c ../Libs/STMTouch_Driver/src/tsl_touchkey.c GeneratorVisualGDB.c system_stm32l1xx.c
+SOURCEFILES := $(BSP_ROOT)/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c $(BSP_ROOT)/FreeRTOS/Source/croutine.c $(BSP_ROOT)/FreeRTOS/Source/event_groups.c $(BSP_ROOT)/FreeRTOS/Source/list.c $(BSP_ROOT)/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c $(BSP_ROOT)/FreeRTOS/Source/portable/MemMang/heap_4.c $(BSP_ROOT)/FreeRTOS/Source/queue.c $(BSP_ROOT)/FreeRTOS/Source/tasks.c $(BSP_ROOT)/FreeRTOS/Source/timers.c $(BSP_ROOT)/STM32L1xxxx/StartupFiles/startup_stm32l152xc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_adc_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_comp.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_crc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cryp.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cryp_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dac.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dac_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_dma.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_flash_ramfunc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2c.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_i2s.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_irda.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_iwdg.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_lcd.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_nor.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_opamp.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_opamp_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pcd_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_pwr_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rcc_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_rtc_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_sd.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_smartcard.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_spi_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_sram.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_usart.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_wwdg.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_fsmc.c $(BSP_ROOT)/STM32L1xxxx/STM32L1xx_HAL_Driver/Src/stm32l1xx_ll_sdmmc.c ../Libs/STMTouch_Driver/src/tsl.c ../Libs/STMTouch_Driver/src/tsl_acq.c ../Libs/STMTouch_Driver/src/tsl_acq_stm32l1xx_sw.c ../Libs/STMTouch_Driver/src/tsl_dxs.c ../Libs/STMTouch_Driver/src/tsl_ecs.c ../Libs/STMTouch_Driver/src/tsl_filter.c ../Libs/STMTouch_Driver/src/tsl_globals.c ../Libs/STMTouch_Driver/src/tsl_linrot.c ../Libs/STMTouch_Driver/src/tsl_object.c ../Libs/STMTouch_Driver/src/tsl_time.c ../Libs/STMTouch_Driver/src/tsl_time_stm32l1xx.c ../Libs/STMTouch_Driver/src/tsl_touchkey.c GeneratorVisualGDB.c system_stm32l1xx.c tsl_user.c
 EXTERNAL_LIBS := 
 EXTERNAL_LIBS_COPIED := $(foreach lib, $(EXTERNAL_LIBS),$(BINARYDIR)/$(notdir $(lib)))
 
@@ -397,31 +397,7 @@ $(BINARYDIR)/tsl_acq.o : ../Libs/STMTouch_Driver/src/tsl_acq.c $(all_make_files)
 	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 
-$(BINARYDIR)/tsl_acq_stm32f0xx.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm32f0xx.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_acq_stm32f3xx.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm32f3xx.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_acq_stm32l1xx_hw.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm32l1xx_hw.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
 $(BINARYDIR)/tsl_acq_stm32l1xx_sw.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm32l1xx_sw.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_acq_stm8l_hw.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm8l_hw.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_acq_stm8l_sw.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm8l_sw.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_acq_stm8tl5x.o : ../Libs/STMTouch_Driver/src/tsl_acq_stm8tl5x.c $(all_make_files) |$(BINARYDIR)
 	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 
@@ -453,23 +429,7 @@ $(BINARYDIR)/tsl_time.o : ../Libs/STMTouch_Driver/src/tsl_time.c $(all_make_file
 	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 
-$(BINARYDIR)/tsl_time_stm32f0xx.o : ../Libs/STMTouch_Driver/src/tsl_time_stm32f0xx.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_time_stm32f3xx.o : ../Libs/STMTouch_Driver/src/tsl_time_stm32f3xx.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
 $(BINARYDIR)/tsl_time_stm32l1xx.o : ../Libs/STMTouch_Driver/src/tsl_time_stm32l1xx.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_time_stm8l.o : ../Libs/STMTouch_Driver/src/tsl_time_stm8l.c $(all_make_files) |$(BINARYDIR)
-	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
-
-
-$(BINARYDIR)/tsl_time_stm8tl5x.o : ../Libs/STMTouch_Driver/src/tsl_time_stm8tl5x.c $(all_make_files) |$(BINARYDIR)
 	$(CC) $(CFLAGS) -c $< -o $@ -MD -MF $(@:.o=.dep)
 
 

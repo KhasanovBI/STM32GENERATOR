@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_linrot.h
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains external declarations of the tsl_linrot.c file.
   ******************************************************************************
   * @attention
@@ -130,9 +130,7 @@ TSL_Status_enum_T TSL_linrot_CalcPos(void);
 // Utility functions
 void TSL_linrot_SetStateCalibration(TSL_tCounter_T delay);
 void TSL_linrot_SetStateOff(void);
-#if !defined(TSLPRM_STM8TL5X) && !defined(STM8TL5X)
 void TSL_linrot_SetStateBurstOnly(void);
-#endif
 TSL_StateId_enum_T TSL_linrot_GetStateId(void);
 TSL_StateMask_enum_T TSL_linrot_GetStateMask(void);
 TSL_tNb_T TSL_linrot_IsChanged(void);

@@ -2,8 +2,8 @@
   ******************************************************************************
   * @file    tsl_touchkey.c
   * @author  MCD Application Team
-  * @version V1.4.3
-  * @date    24-February-2014
+  * @version V2.1.1
+  * @date    25-August-2014
   * @brief   This file contains all functions to manage TouchKey sensors.
   ******************************************************************************
   * @attention
@@ -228,7 +228,6 @@ void TSL_tkey_SetStateOff(void)
 }
 
 
-#if !defined(TSLPRM_STM8TL5X) && !defined(STM8TL5X)
 /**
   * @brief  Go in Off state with sensor in "Burst mode only"
   * @param  None
@@ -240,7 +239,6 @@ void TSL_tkey_SetStateBurstOnly(void)
   THIS_CHANGE = TSL_STATE_CHANGED;
   THIS_OBJ_STATUS = TSL_OBJ_STATUS_BURST_ONLY;
 }
-#endif
 
 
 /**

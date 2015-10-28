@@ -28,6 +28,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stm32l1xx_hal.h>
 #include <../CMSIS_RTOS/cmsis_os.h>
+#include <tsl_user.h>
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -47,14 +48,18 @@ static void LED_Thread2(void const *argument);
   * @retval None
   */
 int main(void)
-{
-  /* STM32F4xx HAL library initialization:
+{	
+	/* STM32F4xx HAL library initialization:
        - Configure the Flash prefetch, instruction and Data caches
        - Configure the Systick to generate an interrupt each 1 msec
        - Set NVIC Group Priority to 4
        - Global MSP (MCU Support Package) initialization
      */
 	HAL_Init();  
+	
+	tsl_user_status_t tsl_status;
+	/* Initialize the STMTouch driver */
+	tsl_user_Init();
 	
 	__GPIOB_CLK_ENABLE();
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -107,7 +112,7 @@ static void LED_Thread1(void const *argument)
 		
 		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
 		osThreadSuspend(LEDThread2Handle);
-		osDelay(2000);
+		osDelay(1900);
 		
 		osThreadResume(LEDThread2Handle);
 	}
